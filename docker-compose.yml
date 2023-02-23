@@ -10,3 +10,7 @@ services:
       - 1323:1323
     volumes:
       - ./:/app
+      - pkg:/go/pkg/mod
+
+volumes:
+  pkg:
