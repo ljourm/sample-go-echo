@@ -1,4 +1,4 @@
-module example/go/echo
+module api-server
 
 go 1.20
 
