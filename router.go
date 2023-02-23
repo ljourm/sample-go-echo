@@ -28,4 +28,12 @@ func setRoutes(router *echo.Echo) {
 
 	healthController := controllers.NewHealthController()
 	router.GET("/health", healthController.Index)
+
+	setRoutesV1(router)
+}
+
+func setRoutesV1(router *echo.Echo) {
+	version := router.Group("/v1")
+
+	version.GET("/hello", controllers.Hello)
 }
