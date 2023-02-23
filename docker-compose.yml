@@ -6,5 +6,7 @@ services:
     tty: true
     stdin_open: true
     working_dir: /app
+    ports:
+      - 1323:1323
     volumes:
       - ./:/app
