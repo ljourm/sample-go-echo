@@ -25,4 +25,7 @@ func initRouter() *echo.Echo {
 
 func setRoutes(router *echo.Echo) {
 	router.GET("/", controllers.Hello)
+
+	healthController := controllers.NewHealthController()
+	router.GET("/health", healthController.Index)
 }
