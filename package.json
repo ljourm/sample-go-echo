@@ -1,0 +1,7 @@
+{
+  "name": "sample-go-echo",
+  "version": "1.0.0",
+  "repository": "git@github.com:ljourm/sample-go-echo.git",
+  "author": "ljourm <ljourm@gmail.com>",
+  "private": true
+}

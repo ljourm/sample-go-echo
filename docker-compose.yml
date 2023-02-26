@@ -11,6 +11,15 @@ services:
     volumes:
       - ./:/app
       - pkg:/go/pkg/mod
+  serverless:
+    image: node:18-bullseye
+    tty: true
+    stdin_open: true
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
 
 volumes:
   pkg:
+  node_modules:
