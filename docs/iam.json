@@ -1,163 +1,96 @@
 {
-  "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "VisualEditor0",
-      "Effect": "Allow",
       "Action": [
-        "lambda:InvokeFunction",
-        "lambda:Update*",
-        "iam:PassRole",
-        "events:Delete*",
-        "lambda:AddPermission",
-        "cloudformation:CreateStack",
-        "cloudformation:DeleteStack",
-        "cloudformation:UpdateStack",
-        "lambda:DeleteFunction",
-        "lambda:PublishVersion",
-        "apigateway:GET",
-        "lambda:RemovePermission",
-        "lambda:CreateAlias"
-      ],
-      "Resource": [
-        "arn:aws:cloudformation:*:*:stack/serverless-test*",
-        "arn:aws:apigateway:*::/restapis",
-        "arn:aws:iam::*:role/*",
-        "arn:aws:events:*:*:rule/serverless-test*",
-        "arn:aws:lambda:*:*:function:serverless-test*"
-      ]
-    },
-    {
-      "Sid": "VisualEditor1",
-      "Effect": "Allow",
-      "Action": "apigateway:GET",
-      "Resource": "arn:aws:apigateway:*::/restapis"
-    },
-    {
-      "Sid": "VisualEditor2",
-      "Effect": "Allow",
-      "Action": ["apigateway:DELETE", "apigateway:PUT", "apigateway:POST", "apigateway:GET"],
-      "Resource": "arn:aws:apigateway:*::/restapis/*/*"
-    },
-    {
-      "Sid": "VisualEditor3",
-      "Effect": "Allow",
-      "Action": [
-        "apigateway:DELETE",
-        "cloudformation:CreateStack",
-        "apigateway:PUT",
-        "cloudformation:DeleteStack",
-        "cloudformation:UpdateStack",
-        "apigateway:POST",
-        "apigateway:GET"
-      ],
-      "Resource": [
-        "arn:aws:cloudformation:*:*:stack/serverless-test*",
-        "arn:aws:apigateway:*::/restapis",
-        "arn:aws:lambda:*:*:function:serverless-test*",
-        "arn:aws:iam::*:role/*",
-        "arn:aws:events:*:*:rule/serverless-test*",
-        "arn:aws:apigateway:*::/restapis/*/*"
-      ]
-    },
-    {
-      "Sid": "VisualEditor4",
-      "Effect": "Allow",
-      "Action": ["cloudformation:CreateStack", "cloudformation:DeleteStack", "cloudformation:UpdateStack"],
-      "Resource": [
-        "arn:aws:cloudformation:*:*:stack/serverless-test*",
-        "arn:aws:iam::*:role/*",
-        "arn:aws:apigateway:*::/restapis",
-        "arn:aws:events:*:*:rule/serverless-test*",
-        "arn:aws:lambda:*:*:function:serverless-test*"
-      ]
-    },
-    {
-      "Sid": "VisualEditor5",
-      "Effect": "Allow",
-      "Action": [
-        "lambda:CreateFunction",
-        "lambda:List*",
-        "s3:*",
-        "logs:*",
-        "lambda:Get*",
+        "apigateway:*",
+        "cloudformation:CancelUpdateStack",
+        "cloudformation:ContinueUpdateRollback",
         "cloudformation:CreateChangeSet",
+        "cloudformation:CreateStack",
+        "cloudformation:CreateUploadBucket",
         "cloudformation:DeleteChangeSet",
+        "cloudformation:DeleteStack",
         "cloudformation:Describe*",
-        "cloudformation:PreviewStackUpdate",
-        "lambda:*",
-        "cloudformation:List*",
+        "cloudformation:EstimateTemplateCost",
         "cloudformation:ExecuteChangeSet",
-        "cloudformation:ValidateTemplate",
-        "cloudformation:Get*"
+        "cloudformation:Get*",
+        "cloudformation:List*",
+        "cloudformation:UpdateStack",
+        "cloudformation:UpdateTerminationProtection",
+        "events:DeleteRule",
+        "events:DescribeRule",
+        "events:ListRuleNamesByTarget",
+        "events:ListRules",
+        "events:ListTargetsByRule",
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets",
+        "iam:AttachRolePolicy",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:DeleteRolePolicy",
+        "iam:DetachRolePolicy",
+        "iam:GetRole",
+        "iam:PassRole",
+        "iam:PutRolePolicy",
+        "lambda:*",
+        "logs:CreateLogGroup",
+        "logs:DeleteLogGroup",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:FilterLogEvents",
+        "logs:GetLogEvents",
+        "logs:PutSubscriptionFilter",
+        "logs:TagResource",
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:DeleteBucketPolicy",
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion",
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:ListAllMyBuckets",
+        "s3:ListBucket",
+        "s3:PutBucketNotification",
+        "s3:PutBucketPolicy",
+        "s3:PutBucketTagging",
+        "s3:PutBucketWebsite",
+        "s3:PutEncryptionConfiguration",
+        "s3:PutObject",
+        "sns:CreateTopic",
+        "sns:DeleteTopic",
+        "sns:GetSubscriptionAttributes",
+        "sns:GetTopicAttributes",
+        "sns:ListSubscriptions",
+        "sns:ListSubscriptionsByTopic",
+        "sns:ListTopics",
+        "sns:SetSubscriptionAttributes",
+        "sns:SetTopicAttributes",
+        "sns:Subscribe",
+        "sns:Unsubscribe",
+        "states:CreateStateMachine",
+        "states:DeleteStateMachine"
       ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:apigateway:*::/restapis",
+        "arn:aws:apigateway:*::/restapis/*/*",
+        "arn:aws:apigateway:*::/apis",
+        "arn:aws:apigateway:*::/apis/*/*",
+        "arn:aws:cloudformation:*:*:stack/serverless-test*",
+        "arn:aws:cloudformation:*:*:stack/serverless-test/*/*",
+        "arn:aws:events:*:*:rule/serverless-test*",
+        "arn:aws:iam::*:role/*",
+        "arn:aws:lambda:*:*:function:serverless-test*",
+        "arn:aws:logs:*:*:log-group:/aws/lambda/serverless-test*",
+        "arn:aws:s3:::serverless-test*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "cloudformation:ValidateTemplate",
       "Resource": "*"
-    },
-    {
-      "Sid": "VisualEditor6",
-      "Effect": "Allow",
-      "Action": ["cloudformation:CreateStack", "cloudformation:DeleteStack", "cloudformation:UpdateStack"],
-      "Resource": [
-        "arn:aws:apigateway:*::/restapis",
-        "arn:aws:lambda:*:*:function:serverless-test*",
-        "arn:aws:iam::*:role/*",
-        "arn:aws:cloudformation:*:*:stack/serverless-test*",
-        "arn:aws:events:*:*:rule/serverless-test*"
-      ]
-    },
-    {
-      "Sid": "VisualEditor7",
-      "Effect": "Allow",
-      "Action": ["cloudformation:CreateStack", "cloudformation:DeleteStack", "cloudformation:UpdateStack"],
-      "Resource": [
-        "arn:aws:cloudformation:*:*:stack/serverless-test*",
-        "arn:aws:iam::*:role/*",
-        "arn:aws:apigateway:*::/restapis",
-        "arn:aws:events:*:*:rule/serverless-test*",
-        "arn:aws:lambda:*:*:function:serverless-test*"
-      ]
-    },
-    {
-      "Sid": "VisualEditor8",
-      "Effect": "Allow",
-      "Action": ["cloudformation:CreateStack", "cloudformation:DeleteStack", "cloudformation:UpdateStack"],
-      "Resource": [
-        "arn:aws:iam::*:role/*",
-        "arn:aws:apigateway:*::/restapis",
-        "arn:aws:events:*:*:rule/serverless-test*",
-        "arn:aws:lambda:*:*:function:serverless-test*",
-        "arn:aws:cloudformation:*:*:stack/serverless-test*"
-      ]
-    },
-    {
-      "Sid": "VisualEditor9",
-      "Effect": "Allow",
-      "Action": ["cloudformation:CreateStack", "cloudformation:DeleteStack", "cloudformation:UpdateStack"],
-      "Resource": "arn:aws:cloudformation:*:*:stack/serverless-test*"
-    },
-    {
-      "Sid": "VisualEditor10",
-      "Effect": "Allow",
-      "Action": "kinesis:*",
-      "Resource": "arn:aws:kinesis:*:*:stream/serverless-test*"
-    },
-    {
-      "Sid": "VisualEditor11",
-      "Effect": "Allow",
-      "Action": "iam:*",
-      "Resource": "arn:aws:iam::*:role/serverless-test*"
-    },
-    {
-      "Sid": "VisualEditor12",
-      "Effect": "Allow",
-      "Action": "sqs:*",
-      "Resource": "arn:aws:sqs:*:*:serverless-test*"
-    },
-    {
-      "Sid": "VisualEditor13",
-      "Effect": "Allow",
-      "Action": ["events:Put*", "events:Remove*"],
-      "Resource": "arn:aws:events:*:*:rule/serverless-test*"
     }
-  ]
+  ],
+  "Version": "2012-10-17"
 }
