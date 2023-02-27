@@ -1,8 +1,11 @@
-version: '3'
+version: "3"
 
 services:
   app:
-    image: golang:1.20.1-bullseye
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    image: serverless-app
     tty: true
     stdin_open: true
     working_dir: /app
