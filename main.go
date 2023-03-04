@@ -1,6 +1,7 @@
 package main
 
 import (
+	"api-server/routes"
 	"context"
 	"log"
 	"os"
@@ -19,7 +20,7 @@ func initEnv() {
 }
 
 func Handler(ctx context.Context, req events.APIGatewayV2HTTPRequest) (events.APIGatewayV2HTTPResponse, error) {
-	router := NewRouter()
+	router := routes.NewRouter()
 
 	echoLambda := echoAdapter.NewV2(router)
 
@@ -29,8 +30,8 @@ func Handler(ctx context.Context, req events.APIGatewayV2HTTPRequest) (events.AP
 func main() {
 	initEnv()
 
-	if(os.Getenv("IS_LOCAL") == "true") {
-		router := NewRouter()
+	if os.Getenv("IS_LOCAL") == "true" {
+		router := routes.NewRouter()
 		router.Logger.Fatal(router.Start(":1323"))
 	} else {
 		lambda.Start(Handler)
