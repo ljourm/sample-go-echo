@@ -36,5 +36,5 @@
   // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "devcontainer"
 
-  "extensions": ["esbenp.prettier-vscode", "streetsidesoftware.code-spell-checker", "golang.go"]
+  "extensions": ["esbenp.prettier-vscode", "streetsidesoftware.code-spell-checker", "golang.go", "ms-vscode.makefile-tools"]
 }
