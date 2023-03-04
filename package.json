@@ -2,7 +2,12 @@
   "name": "sample-go-echo",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "prettier": "prettier --check .",
+    "prettier:write": "prettier --write ."
+  },
   "devDependencies": {
+    "prettier": "^2.8.4",
     "serverless": "^3.27.0"
   }
 }
