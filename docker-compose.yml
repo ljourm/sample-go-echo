@@ -11,16 +11,10 @@ services:
     working_dir: /app
     ports:
       - 1323:1323
+      - 3000:3000
     volumes:
       - ./:/app
       - pkg:/go/pkg/mod
-  serverless:
-    image: node:18-bullseye
-    tty: true
-    stdin_open: true
-    working_dir: /app
-    volumes:
-      - ./:/app
       - node_modules:/app/node_modules
 
 volumes:
